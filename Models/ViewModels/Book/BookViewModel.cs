@@ -1,6 +1,6 @@
-﻿namespace LibraryManagement.DTOs
+﻿namespace LibraryManagement.Models.ViewModels.Book
 {
-    public class BookDto
+    public class BookViewModel
     {
         public int Id { get; set; }
 

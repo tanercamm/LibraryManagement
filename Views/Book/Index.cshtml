@@ -1,0 +1,38 @@
+﻿@using LibraryManagement.Models.ViewModels.Book
+@model IEnumerable<BookViewModel>
+
+@*-- Jumbotron alanı --*@
+<div class="bg-light p-5" style="background-image: url(/img/background2.jpg); background-size: 100% 270%; background-position: top;">
+    <div class="container-fluid">
+        <h1 class="display-4 text-white"> Welcome! </h1>
+        <p class="lead text-white">
+            LibraryManegement is made for book lovers! 🎉
+            <br />
+            Join this exciting book journey and discover new things every time you visit.🔍
+            <br />
+            🌟 Enjoyable discoveries! 🌟
+        </p>
+    </div>
+</div>
+
+<hr />
+<h1>Book List</h1>
+<hr />
+
+@*<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">*@
+<div class="card-group row-cols-md-3">
+    @foreach (var book in Model)
+    {
+        <div class="card text-center mb-3" style="width: 13rem; height: 31rem;">
+            <img src="/book/@book.ImageUrl" alt="@book.Title" />
+            <div class="card-body">
+                <h5 class="card-title">@book.Title</h5>
+                <div>
+                    <a class="btn btn-primary" asp-controller="Book" asp-action="Details"
+                       asp-route-id="@book.Id">Details</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

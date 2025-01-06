@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LibraryManagement.DTOs
+namespace LibraryManagement.Entities
 {
-    public class BookCreateDto
+    public class Book : BaseEntity
     {
         [Required]
         [StringLength(50)]

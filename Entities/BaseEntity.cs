@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LibraryManagement.Models.Entities
+namespace LibraryManagement.Entities
 {
     public class BaseEntity
     {

@@ -1,4 +1,6 @@
 using LibraryManagement.Data;
+using LibraryManagement.Data.Repositories.Abstract;
+using LibraryManagement.Data.Repositories.Concrete;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagement
@@ -19,6 +21,9 @@ namespace LibraryManagement
                 options.UseSqlServer(connectionString);
             });
 
+            builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            builder.Services.AddScoped<IBookRepository, BookRepository>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -37,7 +42,7 @@ namespace LibraryManagement
             app.MapStaticAssets();
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}")
+                pattern: "{controller=Book}/{action=Index}/{id?}")
                 .WithStaticAssets();
 
             app.Run();

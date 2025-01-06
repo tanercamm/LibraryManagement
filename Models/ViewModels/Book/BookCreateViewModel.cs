@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LibraryManagement.Models.Entities
+namespace LibraryManagement.Models.ViewModels.Book
 {
-    public class Book : BaseEntity
+    public class BookCreateViewModel
     {
         [Required]
         [StringLength(50)]
