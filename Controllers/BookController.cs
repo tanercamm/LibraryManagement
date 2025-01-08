@@ -34,7 +34,9 @@ namespace LibraryManagement.Controllers
                 Description = book.Description,
                 Publisher = book.Publisher,
                 PageCount = book.PageCount,
-                ImageUrl = book.ImageUrl
+                ImageUrl = book.ImageUrl,
+                CreatedDate = book.CreatedDate,
+                UpdateDate = book.UpdateDate
             };
 
             return View(viewModel);
