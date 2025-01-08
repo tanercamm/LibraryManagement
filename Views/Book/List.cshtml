@@ -31,9 +31,13 @@
 
                 <td>@item.Publisher</td>
                 <td>@item.PageCount</td>
-                <td></td>
-                <td></td>
+                <td>@item.CreatedDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                <td>@(item.UpdateDate.HasValue ? item.UpdateDate.Value.ToString("yyyy-MM-dd HH:mm:ss") : "Not Updated")</td>
+
                 <td>
+                    <a class="btn btn-info btn-sm" asp-controller="Book" asp-action="Details" asp-route-id="@item.Id">
+                        <i class="bi bi-info-circle"></i> Details
+                    </a>
                     <a class="btn btn-warning btn-sm" asp-controller="Book" asp-action="Update" asp-route-id="@item.Id">
                         <i class="bi bi-pencil-square"></i> Update
                     </a>

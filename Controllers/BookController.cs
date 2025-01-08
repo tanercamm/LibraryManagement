@@ -108,7 +108,9 @@ namespace LibraryManagement.Controllers
                 Description = b.Description,
                 Publisher = b.Publisher,
                 PageCount = b.PageCount,
-                ImageUrl = b.ImageUrl
+                ImageUrl = b.ImageUrl,
+                CreatedDate = b.CreatedDate,
+                UpdateDate = b.UpdateDate
             }).ToList();
 
             return View(viewModels);

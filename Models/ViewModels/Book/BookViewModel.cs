@@ -13,5 +13,9 @@
         public int PageCount { get; set; }
 
         public string? ImageUrl { get; set; }
+
+        public DateTime CreatedDate { get; set; }
+
+        public DateTime? UpdateDate { get; set; }
     }
 }
